@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kilograms to Pounds Converter</title>
+
+    <style>
+        body{
+            font-family: cursive;
+            background-color: #f2f2f2;
+        }
+
+        .container{
+            width: 400px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: rgb(189, 137, 189);
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        h1{
+            margin-bottom: 25px;
+        }
+
+        label{
+            font-weight: bold;
+        }
+
+        input{
+            width: 90%;
+            padding: 12px;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        button{
+            cursor: pointer;
+            font-size: 16px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        #result{
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Kilograms to Pounds Converter</h1>
+
+        <label>Enter Kilograms : </label>
+
+        <input type="number" id="kilogram" placeholder="Enter Kilograms">
+
+        <button type="button" onclick="convertPounds()">Convert</button>
+
+        <h2 id="result"></h2>
+
+    </div>
+
+    <script>
+
+        function convertPounds(){
+
+            let kilogram = Number(document.getElementById('kilogram').value)
+
+            console.log("Kilograms : " + kilogram)
+
+            if(kilogram <= 0){
+                document.getElementById('result').innerHTML =
+                    "Please Enter a Valid Kilogram Value"
+                return
+            }
+
+            let pounds = kilogram * 2.20462
+
+            console.log("Pounds : " + pounds)
+
+            document.getElementById('result').innerHTML =
+                kilogram + " Kilograms = " + pounds.toFixed(2) + " Pounds."
+
+        }
+
+    </script>
+
+</body>
+</html>
